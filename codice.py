@@ -3,8 +3,7 @@ import numpy as np
 import torchvision, torch
 import PIL
 
-array_to_byte = lambda v: chr(v[0] | v[1]<<3 | v[2]<<6)
-load_img = lambda filename: torchvision.transforms.PILToTensor()(PIL.Image.open(filename).convert('RGB')).permute(1,2,0)
+print("ciao")
 
 def txt_in_img(text,imgD):
     res = torch.zeros_like(imgD).type(torch.uint8)
