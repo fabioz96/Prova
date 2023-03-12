@@ -3,13 +3,6 @@ import numpy as np
 import torchvision, torch
 import PIL
 
-def byte_to_array(ch):
-    t = ord(ch)
-    R = t&0b111
-    G = (t>>3)&0b111
-    B = (t>>6)
-    return R,G,B
-
 array_to_byte = lambda v: chr(v[0] | v[1]<<3 | v[2]<<6)
 load_img = lambda filename: torchvision.transforms.PILToTensor()(PIL.Image.open(filename).convert('RGB')).permute(1,2,0)
 
